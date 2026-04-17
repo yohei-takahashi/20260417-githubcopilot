@@ -7,7 +7,58 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>ポモドーロタイマー</h1>
+    <div class="container">
+        <div class="card">
+            <!-- U-1: ヘッダーバー -->
+            <header class="header">
+                <h1 class="header-title">ポモドーロタイマー</h1>
+                <div class="header-icons" aria-hidden="true">
+                    <span class="header-icon">ー</span>
+                    <span class="header-icon">□</span>
+                    <span class="header-icon">×</span>
+                </div>
+            </header>
+
+            <!-- U-2: 状態ラベル -->
+            <p id="status-label" class="status-label">作業中</p>
+
+            <!-- U-3, U-4: 円形プログレスバー + 残り時間 -->
+            <div class="timer-wrapper">
+                <svg class="progress-ring" viewBox="0 0 200 200">
+                    <circle class="progress-ring-bg" cx="100" cy="100" r="85"
+                            fill="none" stroke="#e0e0e0" stroke-width="12" />
+                    <circle id="progress-ring-circle" class="progress-ring-circle"
+                            cx="100" cy="100" r="85"
+                            fill="none" stroke="#5b6abf" stroke-width="12"
+                            stroke-linecap="round"
+                            transform="rotate(-90 100 100)" />
+                </svg>
+                <div id="timer-display" class="timer-display">25:00</div>
+            </div>
+
+            <!-- U-5, U-6: 操作ボタン -->
+            <div class="buttons">
+                <button id="btn-start" class="btn btn-primary">開始</button>
+                <button id="btn-reset" class="btn btn-outline">リセット</button>
+            </div>
+
+            <!-- U-7: 進捗カード -->
+            <div class="progress-card">
+                <h2 class="progress-card-title">今日の進捗</h2>
+                <div class="progress-stats">
+                    <div class="stat">
+                        <span id="completed-count" class="stat-value">0</span>
+                        <span class="stat-label">完了</span>
+                    </div>
+                    <div class="stat">
+                        <span id="total-focus-time" class="stat-value">0分</span>
+                        <span class="stat-label">集中時間</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='js/timerCore.js') }}"></script>
     <script src="{{ url_for('static', filename='js/storage.js') }}"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
