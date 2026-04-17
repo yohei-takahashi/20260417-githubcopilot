@@ -1,1 +1,125 @@
 /* Pomodoro Timer - Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Hiragino Sans', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 18px;
+  color: #333;
+}
+
+.window-icons span {
+  margin-left: 8px;
+  color: #999;
+  font-size: 14px;
+}
+
+.mode-label {
+  font-size: 16px;
+  color: #7c3aed;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.timer-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.progress-ring {
+  display: block;
+}
+
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: #7c3aed;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #333;
+}
+
+.progress-cards {
+  display: flex;
+  gap: 16px;
+}
+
+.card {
+  flex: 1;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #7c3aed;
+}
+
+.card-label {
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+}

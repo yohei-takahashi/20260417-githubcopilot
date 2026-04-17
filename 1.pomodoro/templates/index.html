@@ -7,7 +7,42 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>ポモドーロタイマー</h1>
+    <div class="container">
+        <header class="header">
+            <h1>ポモドーロタイマー</h1>
+            <div class="window-icons"><span>ー</span><span>□</span><span>×</span></div>
+        </header>
+
+        <p id="mode-label" class="mode-label">作業中</p>
+
+        <div class="timer-wrapper">
+            <svg class="progress-ring" width="200" height="200" viewBox="0 0 200 200">
+                <circle class="progress-ring__bg" cx="100" cy="100" r="90"
+                        stroke="#e0e0e0" stroke-width="8" fill="none" />
+                <circle id="progress-circle" class="progress-ring__circle" cx="100" cy="100" r="90"
+                        stroke="#7c3aed" stroke-width="8" fill="none"
+                        transform="rotate(-90 100 100)" />
+            </svg>
+            <span id="timer-display" class="timer-display">25:00</span>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="btn btn-primary">開始</button>
+            <button id="reset-btn" class="btn btn-secondary">リセット</button>
+        </div>
+
+        <div class="progress-cards">
+            <div class="card">
+                <p class="card-value"><span id="completed-count">0</span></p>
+                <p class="card-label">完了ポモドーロ</p>
+            </div>
+            <div class="card">
+                <p class="card-value"><span id="focus-time">0分</span></p>
+                <p class="card-label">累計集中時間</p>
+            </div>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='js/timerCore.js') }}"></script>
     <script src="{{ url_for('static', filename='js/storage.js') }}"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
