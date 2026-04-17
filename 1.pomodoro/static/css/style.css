@@ -1,1 +1,203 @@
 /* Pomodoro Timer - Styles */
+
+/* ===== U-9: 紫グラデーション背景 ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+                 "Hiragino Sans", Meiryo, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ===== U-8: レスポンシブ カードレイアウト ===== */
+.container {
+    width: 100%;
+    max-width: 420px;
+    padding: 16px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    padding: 24px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== U-1: ヘッダーバー ===== */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.header-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.header-icons {
+    display: flex;
+    gap: 12px;
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.header-icon {
+    cursor: default;
+    user-select: none;
+}
+
+/* ===== U-2: 状態ラベル ===== */
+.status-label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* ===== U-3 / U-4: 円形プログレスバー + 残り時間 ===== */
+.timer-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 24px;
+}
+
+.progress-ring {
+    width: 100%;
+    height: 100%;
+}
+
+.progress-ring-bg {
+    stroke: #e6e6e6;
+}
+
+.progress-ring-circle {
+    stroke: #5b6abf;
+    transition: stroke-dashoffset 0.3s ease;
+    /* 円周 = 2πr = 2 * π * 85 ≈ 534.07 */
+    stroke-dasharray: 534.07;
+    stroke-dashoffset: 0;
+}
+
+.timer-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* ===== U-5 / U-6: 操作ボタン ===== */
+.buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.btn {
+    min-width: 110px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-primary {
+    background: #5b6abf;
+    color: #fff;
+    border: 2px solid #5b6abf;
+}
+
+.btn-outline {
+    background: #fff;
+    color: #5b6abf;
+    border: 2px solid #5b6abf;
+}
+
+/* ===== U-7: 進捗カード ===== */
+.progress-card {
+    width: 100%;
+    background: #f5f6fa;
+    border-radius: 14px;
+    padding: 18px 20px;
+}
+
+.progress-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #5b6abf;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 4px;
+}
+
+/* ===== U-8: レスポンシブ対応 ===== */
+@media (max-width: 480px) {
+    .container {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 20px 18px 24px;
+    }
+
+    .timer-wrapper {
+        width: 170px;
+        height: 170px;
+    }
+
+    .timer-display {
+        font-size: 2.3rem;
+    }
+
+    .btn {
+        min-width: 95px;
+        padding: 9px 18px;
+        font-size: 0.9rem;
+    }
+}
