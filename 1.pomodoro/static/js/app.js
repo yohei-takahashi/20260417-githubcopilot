@@ -66,11 +66,6 @@
     intervalId = setInterval(function () {
       state = tick(state);
       render();
-
-      // タイマーが自動切替でモードが変わった場合も継続
-      if (state.status !== 'running') {
-        stopInterval();
-      }
     }, 1000);
   }
 
