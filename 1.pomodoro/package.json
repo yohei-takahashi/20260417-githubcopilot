@@ -1,0 +1,14 @@
+{
+  "name": "pomodoro-timer",
+  "version": "1.0.0",
+  "description": "ポモドーロタイマー Webアプリケーション",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testMatch": ["**/tests/test_*.js"]
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
